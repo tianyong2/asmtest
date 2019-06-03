@@ -1,15 +1,16 @@
 package com.example.asmtest;
 
 
-import com.example.asmtest.asm.MyClassVisitor;
+import com.example.asmtest.asm.cv.MyClassVisitor;
 import com.example.asmtest.asm.Utils;
 import com.example.asmtest.classloader.BytesClassLoader;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.util.TraceClassVisitor;
 
-import sun.misc.Unsafe;
+import java.io.PrintWriter;
 
 
 public class MyClass {
@@ -17,7 +18,8 @@ public class MyClass {
 
     public static void main(String[] args) throws Exception {
         MyClass myClass = new MyClass();
-        myClass.testAsm();
+//        myClass.testAsm();
+        myClass.trace();
 
     }
 
@@ -50,6 +52,16 @@ public class MyClass {
         ClassReader reader = new ClassReader(srcBytes);
         reader.accept(visitor, ClassReader.EXPAND_FRAMES);
         return classWriter.toByteArray();
+    }
+
+    private void trace() throws Exception {
+        String path = "D:\\test_project\\AutoTrackAppClick6\\temp\\Hello.class";
+        byte[] srcBytes = Utils.getClassBytes(path);
+        ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS);
+
+        ClassVisitor visitor = new TraceClassVisitor(classWriter, new PrintWriter(System.out));
+        ClassReader reader = new ClassReader(srcBytes);
+        reader.accept(visitor, ClassReader.EXPAND_FRAMES);
     }
 
 

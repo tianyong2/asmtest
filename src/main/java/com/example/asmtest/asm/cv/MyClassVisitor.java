@@ -1,10 +1,10 @@
-package com.example.asmtest.asm;
+package com.example.asmtest.asm.cv;
+
+import com.example.asmtest.asm.Utils;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-
-import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 
 public class MyClassVisitor extends ClassVisitor implements Opcodes {
     public MyClassVisitor(ClassVisitor classVisitor) {

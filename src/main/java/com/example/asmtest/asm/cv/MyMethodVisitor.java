@@ -1,4 +1,4 @@
-package com.example.asmtest.asm;
+package com.example.asmtest.asm.cv;
 
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -12,7 +12,7 @@ public class MyMethodVisitor extends AdviceAdapter {
     private String name;
     private MethodVisitor mv;
 
-    protected MyMethodVisitor(MethodVisitor mv, int access, String name, String desc) {
+    public MyMethodVisitor(MethodVisitor mv, int access, String name, String desc) {
         super(Opcodes.ASM5, mv, access, name, desc);
         this.name = name;
         this.mv = mv;
