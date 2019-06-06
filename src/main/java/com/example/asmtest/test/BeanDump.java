@@ -1,4 +1,4 @@
-package com.example.asmtest;
+package com.example.asmtest.test;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.example.asmtest.asm.cv;
+package com.example.asmtest.asm.mv;
 
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;

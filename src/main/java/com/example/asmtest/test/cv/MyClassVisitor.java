@@ -1,6 +1,8 @@
-package com.example.asmtest.asm.cv;
+package com.example.asmtest.test.cv;
 
 import com.example.asmtest.asm.Utils;
+import com.example.asmtest.asm.cv.LifeCircleVisitor;
+import com.example.asmtest.asm.mv.MyMethodVisitor;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;

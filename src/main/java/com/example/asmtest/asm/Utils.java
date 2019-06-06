@@ -1,6 +1,6 @@
 package com.example.asmtest.asm;
 
-import com.example.asmtest.Inject;
+import com.example.asmtest.test.Inject;
 
 import org.objectweb.asm.Opcodes;
 
